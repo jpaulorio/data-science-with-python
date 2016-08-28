@@ -35,8 +35,8 @@ def plotIrisData(figure, X, y):
 
 	plt.xlim(x_min, x_max)
 	plt.ylim(y_min, y_max)
-	plt.xticks(())
-	plt.yticks(())
+	plt.xticks(np.arange(x_min, x_max, (x_max - x_min)/10))
+	plt.yticks(np.arange(y_min, y_max, (y_max - y_min)/10))
 
 def plotDecisionBoundary(figure, X, Y, Z):
 	# Create color maps

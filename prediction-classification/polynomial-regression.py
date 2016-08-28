@@ -79,7 +79,6 @@ print('Variance score: %.2f' % polynomialRegression.score(polynomialFeatures, ta
 # Plot outputs
 x_min, x_max = features.min(), features.max()
 y_min, y_max = targetValues.min(), targetValues.max()
-
 plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.scatter(features, targetValues,  color='black')
@@ -87,7 +86,7 @@ plt.plot(features, predicted, color='blue', linewidth=2.0)
 plt.plot(features, predictedPoly, color='yellow', linewidth=2.0)
 plt.xlabel('X (input)')
 plt.ylabel('y (output)')
-plt.xticks(())
-plt.yticks(())
+plt.xticks(np.arange(x_min, x_max, (x_max - x_min)/10))
+plt.yticks(np.arange(y_min, y_max, (y_max - y_min)/10))
 
 plt.show()

@@ -15,6 +15,10 @@ the linear approximation.
 The coefficients, the residual sum of squares and the variance score are also
 calculated.
 
+If you don't see anything, try Alt+Tab or Cmd+Tab to switch to the plot window.
+
+Close all plot windows to finish the program.
+
 """
 print(__doc__)
 
@@ -63,7 +67,11 @@ plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
 plt.plot(diabetes_X_test, regr.predict(diabetes_X_test), color='blue',
          linewidth=3)
 
-plt.xticks(())
-plt.yticks(())
+x_min, x_max = diabetes_X_test.min(), diabetes_X_test.max()
+y_min, y_max = diabetes_y_test.min(), diabetes_y_test.max()
+plt.xlim(x_min - 0.01, x_max + 0.01)
+plt.ylim(y_min - 10, y_max)
+plt.xticks(np.arange(x_min, x_max, (x_max - x_min)/5))
+plt.yticks(np.arange(y_min, y_max, (y_max - y_min)/10))
 
 plt.show()
